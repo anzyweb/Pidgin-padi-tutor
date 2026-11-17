@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pidgin Padi — Nigerian Language Tutor</title>
+  <meta name="theme-color" content="#0b6b3a" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">P</div>
+        <div>
+          <h1>Pidgin Padi</h1>
+          <p class="tagline">Your Naija language companion</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label class="sr-only" for="languageSelect">Language</label>
+        <select id="languageSelect" aria-label="Language"></select>
+
+        <div class="mode-toggle" role="group" aria-label="Mode">
+          <button type="button" id="modeTutor" class="mode-btn active" aria-pressed="true">🎓 Tutor</button>
+          <button type="button" id="modeVibe" class="mode-btn" aria-pressed="false">🔥 Vibe</button>
+        </div>
+      </div>
+    </header>
+
+    <div id="demoBadge" class="demo-badge" hidden>
+      Demo Mode — add your API key in app.js to talk to Claude
+    </div>
+
+    <section class="potd" aria-labelledby="potdLabel">
+      <div class="potd-text">
+        <span id="potdLabel" class="potd-label">Phrase of the Day</span>
+        <p id="potdPhrase" class="potd-phrase"></p>
+        <p id="potdMeaning" class="potd-meaning"></p>
+      </div>
+      <button type="button" id="potdExplain" class="potd-btn">Break am down</button>
+    </section>
+
+    <nav class="quick-bar" id="quickPrompts" aria-label="Quick prompts"></nav>
+
+    <main id="chat" class="chat" aria-live="polite"></main>
+
+    <form id="composer" class="composer" autocomplete="off">
+      <label class="sr-only" for="userInput">Your message</label>
+      <textarea id="userInput" rows="1" placeholder="Type your message…" enterkeyhint="send"></textarea>
+      <button type="submit" id="sendBtn" aria-label="Send">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path fill="currentColor" d="M2 21l21-9L2 3v7l15 2-15 2z" />
+        </svg>
+      </button>
+    </form>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
